@@ -40,7 +40,7 @@
 
 body {
     /*//font: normal 14px/1.5 'proxima nova', 'Helvetica Neue', Arial, Helvetica, sans-serif;*/
-    background-color: black;
+    background-color: #181818;
     cursor: default;
 }
 
@@ -74,4 +74,7 @@ a:active {
     color:grey;
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 60%;
+}
+.white{
+    color: white;
 }
