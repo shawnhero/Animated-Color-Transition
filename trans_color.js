@@ -11,7 +11,6 @@ function createTransition(start, stop) {
 			clearInterval(handler);
 		}
 		currentColor = (stop>start)?(currentColor+step) : (currentColor-step);
-		// var output = grey2hex(currentColor);
 		setcolor(currentColor);
 	}
 	var handler = setInterval(transition, iteration);
@@ -20,11 +19,6 @@ function createTransition(start, stop) {
 function setcolor(color){
 	// set bg color
 	document.body.style.backgroundColor = grey2hex(color);
-	// set all the colors
-	// var myElement = document.getElementsByClassName('a');
- //    for(i=0; i<myElement.length; i++) {
- //        myElement[i].style.color = grey2hex(255-color);
- //    }
  	$('a').css('color', grey2hex(255-color));
 }
 
@@ -39,27 +33,11 @@ function grey2hex(num) {
 
 function onLight(){
 	createTransition(0,255);
-	var myElement = document.getElementsByClassName('grey');
-	for(i=0; i<myElement.length; i++) {
-	    myElement[i].style.color = "blue";
-	}
 	val = !val;
 	setColor();
-
-	// to remove some element    
-	Element.prototype.remove = function() {
-	    this.parentElement.removeChild(this);
-	}
-	NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
-	    for(var i = 0, len = this.length; i < len; i++) {
-	        if(this[i] && this[i].parentElement) {
-	            this[i].parentElement.removeChild(this[i]);
-	        }
-	    }
-	}
-	document.getElementById("to_remove").remove();
-	// add text
+	//$( "to_remove" ).remove();
 	$("#footer").text("et facta est lux");
+	$(".body_text").css("color", "black");
 }
 
 $(document).ready(function(){ setColor(); });
@@ -76,7 +54,6 @@ function setColor(){
     $("a").hover(function(){
         var $this = $(this);
         $this.css("color", linkcolor_hover);
-        // $("a").css("color","white");
     },function(){
         var $this = $(this);
         $this.css("color", linkcolor);
